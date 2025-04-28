@@ -2,7 +2,7 @@ import React from "react";
 import { useUserContext } from "./UserContext";
 import { Link } from "react-router-dom";
 import Navbar from "./Navbar";
-import logo from "./images/logo.jpg";
+import logo from "./images/logo.png";
 import c1 from "./images/c1.jpg";
 import c2 from "./images/html.png";
 import c3 from "./images/sql.jpg";
@@ -32,18 +32,18 @@ function Home() {
       <Navbar page={"home"} />
       <div>
         <section id="home">
-          <h2>Enhance your future with EduVerse Academy</h2>
+          <h2>Enhance your future with Learning Management System</h2>
           <p>
             {" "}
-            OneYes Academy is a massive open online course provider, and its
+            <strong>LMS</strong> Academy is a massive open online course provider, and its
             learning experience arranges coursework into a series of modules and
             lessons that can include videos, text notes, and assessment tests.
           </p>
           <div className="btn">
-            <a className="blue" href="#">
+            <a className="blue" href="http://localhost:3000/#features">
               Learn More
             </a>
-            <a className="yellow" href="#">
+            <a className="yellow" href="http://localhost:3000/courses">
               Visit Courses
             </a>
           </div>

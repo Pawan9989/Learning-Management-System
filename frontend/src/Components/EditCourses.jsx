@@ -53,7 +53,7 @@ function EditCourse() {
   useEffect(() => {
     async function fetchCourse() {
       try {
-        const response = await axios.get(`http://localhost:8080/api/courses/${courseId}`);
+        const response = await axios.get(`http://localhost:8085/api/courses/${courseId}`);
         const fetchedCourse = response.data;
         setFormData(fetchedCourse);
       } catch (err) {
@@ -74,7 +74,7 @@ function EditCourse() {
     }
     console.log(formData)
     const response = await axios.post(
-      `http://localhost:8080/api/courses/${courseId}`,
+      `http://localhost:8085/api/courses/${courseId}`,
       formData
     );
 

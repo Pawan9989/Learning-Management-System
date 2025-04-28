@@ -22,7 +22,7 @@ function AddCourse() {
     e.preventDefault();
 
     try {
-      const response = await fetch('http://localhost:8080/api/courses', {
+      const response = await fetch('http://localhost:8085/api/courses', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

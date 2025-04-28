@@ -15,7 +15,7 @@ function Courses() {
    const authToken = localStorage.getItem('token');
   
   useEffect(() => {
-    fetch("http://localhost:8080/api/courses")
+    fetch("http://localhost:8085/api/courses")
       .then((response) => response.json())
       .then((data) => {
         setCourses(data);
@@ -25,7 +25,7 @@ function Courses() {
       });
       const userId = localStorage.getItem("id");
       if(userId){
-        fetch(`http://localhost:8080/api/learning/${userId}`)
+        fetch(`http://localhost:8085/api/learning/${userId}`)
           .then((response) => response.json())
           .then((data) => {
             console.log(data);
@@ -47,7 +47,7 @@ function Courses() {
         userId: userId,
         courseId: courseId
      };
-      axios.post('http://localhost:8080/api/learning', enrollRequest)
+      axios.post('http://localhost:8085/api/learning', enrollRequest)
           .then((response) => {
             if(response.data == "Enrolled successfully"){
               toast.success('Course Enrolled successfully', {

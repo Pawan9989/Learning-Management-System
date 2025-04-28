@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
-import logo from "./images/logo.jpg";
+import logo from "./images/logo.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser, faChalkboardUser } from "@fortawesome/free-solid-svg-icons";
 

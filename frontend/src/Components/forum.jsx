@@ -18,10 +18,10 @@ function Forum() {
   });
 
   useEffect(() => {
-    fetch(`http://localhost:8080/api/discussions/${courseId}`)
+    fetch(`http://localhost:8085/api/discussions/${courseId}`)
       .then((res) => res.json())
       .then((data) => setMessage(data));
-      fetch(`http://localhost:8080/api/courses/${courseId}`).then((res)=>res.json()).then((data)=>setCourse(data));
+      fetch(`http://localhost:8085/api/courses/${courseId}`).then((res)=>res.json()).then((data)=>setCourse(data));
   }, []);
 
   const addTask = () => {
@@ -29,7 +29,7 @@ function Forum() {
       const newMessage = taskRef.current.value.trim();
       setFormData({ ...formData, content: newMessage });
   
-      fetch('http://localhost:8080/api/discussions/addMessage', {
+      fetch('http://localhost:8085/api/discussions/addMessage', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

@@ -8,7 +8,7 @@ const Feedback = (props) => {
   const [feedbacks, setFeedbacks] = useState([]);
 
   useEffect(() => {
-    fetch(`http://localhost:8080/api/feedbacks/${courseId}`)
+    fetch(`http://localhost:8085/api/feedbacks/${courseId}`)
       .then((res) => res.json())
       .then((data) => {
         const firstThreeFeedbacks = data.slice(0, 3);
@@ -21,7 +21,7 @@ const Feedback = (props) => {
     if (feedback === "" && !courseId) {
       alert("Please enter feedback to submit");
     } else {
-      fetch("http://localhost:8080/api/feedbacks", {
+      fetch("http://localhost:8085/api/feedbacks", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

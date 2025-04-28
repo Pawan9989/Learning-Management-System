@@ -24,7 +24,7 @@ function Profile() {
     async function fetchUserDetails() {
       try {
         const response = await fetch(
-          `http://localhost:8080/api/users/${id}`
+          `http://localhost:8085/api/users/${id}`
         );
         if (!response.ok) {
           throw new Error("Failed to fetch user details.");

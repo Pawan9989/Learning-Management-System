@@ -27,7 +27,7 @@ function RegistrationForm() {
     e.preventDefault();
 
     try {
-      const response = await fetch("http://localhost:8080/api/users/add", {
+      const response = await fetch("http://localhost:8085/api/users/add", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -43,7 +43,7 @@ function RegistrationForm() {
         setError(data.error);
       }
     } catch (error) {
-      setError("Registration error:", error);
+      setError("Registration error: " + error.message);
     }
   };
 
@@ -112,7 +112,7 @@ function RegistrationForm() {
                   <label>Date of Birth:</label>
                 </div>
                 <input
-                  type="text"
+                  type="date"
                   name="dob"
                   value={formData.dob}
                   onChange={handleChange}
@@ -127,6 +127,7 @@ function RegistrationForm() {
                   name="gender"
                   value={formData.gender}
                   onChange={handleChange}
+                  
                 />
               </div>
             </div>

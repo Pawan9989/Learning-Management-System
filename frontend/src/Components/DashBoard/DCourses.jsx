@@ -31,7 +31,7 @@ function Courses() {
   };
 
   useEffect(() => {
-    fetch(`http://localhost:8080/api/courses`)
+    fetch(`http://localhost:8085/api/courses`)
       .then((response) => response.json())
       .then((data) => {
         setCourses(data);

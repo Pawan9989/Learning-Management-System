@@ -12,7 +12,7 @@ const Performance = () => {
     async function fetchCourse() {
       try {
         const userId = localStorage.getItem("id");
-        const response = await axios.get(`http://localhost:8080/api/learning/${userId}`);
+        const response = await axios.get(`http://localhost:8085/api/learning/${userId}`);
         const fetchedCourse = response.data;
         setEnrolledCourses(fetchedCourse);
       } catch (err) {
@@ -24,7 +24,7 @@ const Performance = () => {
 
   useEffect(()=>{
     const userId = localStorage.getItem("id");
-    fetch(`http://localhost:8080/api/assessments/perfomance/${userId}`).then((res)=>res.json()).then((data)=>{setPerfomanceData(data)});
+    fetch(`http://localhost:8085/api/assessments/perfomance/${userId}`).then((res)=>res.json()).then((data)=>{setPerfomanceData(data)});
    
   },[])
 

@@ -18,7 +18,7 @@ function YourComponent() {
   const [openModal, setOpenModal] = useState(false);
   const[totalQsns , SetTotalQsns] = useState(0);
   useEffect(() => {
-    fetch(`http://localhost:8080/api/questions/${courseId}`)
+    fetch(`http://localhost:8085/api/questions/${courseId}`)
       .then(res => res.json())
       .then(res => {
         setTest(res);
@@ -46,7 +46,7 @@ const handleMarks = () =>{
     userId: localStorage.getItem("id"),  
     marks: (correctCount/totalQsns)*100 
   }
-  axios.post(`http://localhost:8080/api/assessments/add/${userId}/${courseId}`, data)
+  axios.post(`http://localhost:8085/api/assessments/add/${userId}/${courseId}`, data)
   .then(response => {
     console.log('Request successful:', response.data);
   })

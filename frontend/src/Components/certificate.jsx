@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import Confetti from "react-dom-confetti";
 import html2canvas from "html2canvas";
 import jsPDF from "jspdf";
-import img from './images/logo.jpg';
+import img from './images/logo.png';
 import seal from './images/seal.png'
 
 const Certificate = () => {
@@ -30,7 +30,7 @@ const Certificate = () => {
 
     async function fetchUserDetails() {
       try {
-        const response = await fetch(`http://localhost:8080/api/users/${id}`);
+        const response = await fetch(`http://localhost:8085/api/users/${id}`);
         if (!response.ok) {
           throw new Error("Failed to fetch user details.");
         }
@@ -46,7 +46,7 @@ const Certificate = () => {
     async function fetchCourse() {
       try {
         const response = await fetch(
-          `http://localhost:8080/api/courses/${courseId}`
+          `http://localhost:8085/api/courses/${courseId}`
         );
 
         if (!response.ok) {

@@ -15,7 +15,7 @@ function Login() {
   const login = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch("http://localhost:8080/api/users/login", {
+      const response = await fetch("http://localhost:8085/api/users/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -28,7 +28,7 @@ function Login() {
         localStorage.setItem("email", email);
         console.log(data.token);
         const userDetailsResponse = await fetch(
-          `http://localhost:8080/api/users/details?email=${email}`
+          `http://localhost:8085/api/users/details?email=${email}`
         );
 
         if (userDetailsResponse.ok) {
@@ -46,7 +46,7 @@ function Login() {
         setError(data.error);
       }
     } catch (error) {
-      setError("An error occurred. Please try again.");
+      setError("Invalid Credentials.");
     }
   };
 

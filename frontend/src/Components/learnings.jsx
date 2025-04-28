@@ -11,7 +11,7 @@ function Learnings(){
     useEffect(() => {
         async function fetchCourse() {
           try {
-            const response = await axios.get(`http://localhost:8080/api/learning/${userId}`);
+            const response = await axios.get(`http://localhost:8085/api/learning/${userId}`);
             const fetchedCourse = response.data;
             setCourse(fetchedCourse);
           } catch (err) {
