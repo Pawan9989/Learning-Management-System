@@ -83,8 +83,10 @@ function Home() {
             <div className="courses">
               <img src={c1} alt="" />
               <div className="details">
-                <p>Updated 12/08/23</p>
-                <h6>JavaScript Beginner Course</h6>
+                <p>Updated 01/05/2025</p>
+                <h6>
+                  <Link to = "/courses"> JavaScript Beginner Course </Link>
+                  </h6>
                 <div className="star">
                   {[...Array(5)].map((_, index) => (
                     <FontAwesomeIcon key={index} icon={faStar} className="i" />
@@ -92,77 +94,87 @@ function Home() {
                   <p>(239)</p>
                 </div>
               </div>
-              <div className="cost">$49.99</div>
+              <div className="cost">₹999</div>
             </div>
             <div className="courses">
               <img src={c2} alt="" />
               <div className="details">
-                <p>Updated 12/08/23</p>
-                <h6>HTML Complete Course</h6>
+                <p>Updated 01/05/2025</p>
+                <h6>
+                <Link to = "/courses"> HTML Complete Course </Link>
+                </h6>
                 <div className="star">
                   {[...Array(5)].map((_, index) => (
                     <FontAwesomeIcon key={index} icon={faStar} className="i" />
                   ))}
-                  <p>(239)</p>
+                  <p>(178)</p>
                 </div>
               </div>
-              <div className="cost">$49.99</div>
+              <div className="cost">₹799</div>
             </div>
             <div className="courses">
               <img src={c3} alt="" />
               <div className="details">
-                <p>Updated 12/08/23</p>
-                <h6>SQL Beginner Course</h6>
+                <p>Updated 01/05/2025</p>
+                <h6>
+                <Link to = "/courses"> SQL Beginner Course </Link>
+                </h6>
                 <div className="star">
                   {[...Array(5)].map((_, index) => (
                     <FontAwesomeIcon key={index} icon={faStar} className="i" />
                   ))}
-                  <p>(239)</p>
+                  <p>(258)</p>
                 </div>
               </div>
-              <div className="cost">$49.99</div>
+              <div className="cost">₹499</div>
             </div>
             <div className="courses">
               <img src={c4} alt="" />
               <div className="details">
-                <p>Updated 12/08/23</p>
-                <h6>Python Master Course</h6>
+                <p>Updated 03/05/2025</p>
+                <h6>
+                <Link to = "/courses"> Python Master Course </Link>
+                </h6>
                 <div className="star">
                   {[...Array(5)].map((_, index) => (
                     <FontAwesomeIcon key={index} icon={faStar} className="i" />
                   ))}
-                  <p>(239)</p>
+                  <p>(550)</p>
                 </div>
               </div>
-              <div className="cost">$49.99</div>
+              <div className="cost">₹1499</div>
             </div>
             <div className="courses">
               <img src={c5} alt="" />
               <div className="details">
-                <p>Updated 12/08/23</p>
-                <h6>Java Essentials</h6>
+                <p>Updated 05/05/2025</p>
+                <h6>
+                <Link to = "/courses"> Java Essentials </Link>
+                </h6>
                 <div className="star">
                   {[...Array(5)].map((_, index) => (
                     <FontAwesomeIcon key={index} icon={faStar} className="i" />
                   ))}
-                  <p>(239)</p>
+                  <p>(783)</p>
                 </div>
               </div>
-              <div className="cost">$49.99</div>
+              <div className="cost">₹1999</div>
             </div>
             <div className="courses">
               <img src={c6} alt="" />
               <div className="details">
-                <p>Updated 12/08/23</p>
-                <h6>CSS Complete Course</h6>
+                <p>Updated 06/05/2025</p>
+                <h6>
+                <Link to = "/courses"> CSS Complete Course </Link>
+                </h6>
                 <div className="star">
                   {[...Array(5)].map((_, index) => (
                     <FontAwesomeIcon key={index} icon={faStar} className="i" />
                   ))}
-                  <p>(239)</p>
+                  <p>(439)</p>
                 </div>
               </div>
-              <div className="cost">$49.99</div>
+              <div className="cost">₹499</div>
             </div>
           </div>
         </section>

@@ -7,7 +7,7 @@ import Navbar from './Navbar';
 function Tutors() {
   const [tutors , setTutors] = useState([]);
   useEffect(()=>{
-    fetch("http://localhost:8800/tutors").then((data)=>data.json()).then((res)=>setTutors(res));
+    fetch("http://localhost:8085/tutors").then((data)=>data.json()).then((res)=>setTutors(res));
   },[])
   console.log(tutors);
   return (

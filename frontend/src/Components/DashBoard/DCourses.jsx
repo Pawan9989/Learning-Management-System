@@ -44,7 +44,7 @@ function Courses() {
 
   function deleteCourse(courseId) {
     axios
-      .delete("http://localhost:8800/delete", {
+      .delete("http://localhost:8085/delete", {
         data: { courseId: courseId },
       })
       .then((response) => {
