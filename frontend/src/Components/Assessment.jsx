@@ -70,11 +70,11 @@ const handleCancel = () => {
 
 let message = '';
 
-  if (correctCount === 5) {
+  if (correctCount == totalQsns) {
     message = 'Awesome 😎';
-  } else if (correctCount >= 3) {
+  } else if (correctCount == ((totalQsns)/2) ) {
     message = 'Good 😊';
-  } else {
+  } else if (correctCount != ((totalQsns)/2)) {
     message = 'Poor 😒';
   }
 
