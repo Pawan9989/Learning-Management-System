@@ -22,7 +22,7 @@ import Performance from './Components/DashBoard/Performance';
 import DTutors from './Components/DashBoard/DTutors';
 import certificate from './Components/certificate';
 import Forum from './Components/forum';
-
+import ProtectedRoute from "./Components/ProtectedRoute";
 
 
 function App() {
@@ -49,6 +49,14 @@ function App() {
           <Route path='/Dtutors' Component={DTutors}></Route>
           <Route path='/Performance' Component={Performance} />
           <Route path='*' Component={ErrorPage}></Route>
+          <Route
+  path="/courses"
+  element={
+    <ProtectedRoute>
+      <Courses />
+    </ProtectedRoute>
+  }
+/>
         </Routes>
       </BrowserRouter>
       <ToastContainer/>
