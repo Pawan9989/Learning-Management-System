@@ -366,7 +366,7 @@ const Course = () => {
                 <div><b>Course Name:</b> {course.course_name}</div>
                 <div><b>Instructor:</b> {course.instructor}</div>
                 <div><b>Content type:</b> Video</div>
-                {course.price && <div><b>Price:</b> ₹{course.price}</div>}
+                {/* {course.price && <div><b>Price:</b> ₹{course.price}</div>} */}
               </div>
               <div style={{ marginTop: 18, color: '#666', fontSize: 15, textAlign: 'left' }}>
                 This online programming course provides a comprehensive introduction to the <b>{course.course_name}</b>. Whether you're a beginner or looking to expand your coding skills, this course will cover <b>{course.course_name}</b> fundamentals and prepare you for more advanced challenges.

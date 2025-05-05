@@ -5,7 +5,7 @@ import ImgUpload from "./ImgUpload";
 import Performance from "./DashBoard/Performance";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
-
+import "./profile.css";
 
 function Profile() {
   const navigate = useNavigate();
