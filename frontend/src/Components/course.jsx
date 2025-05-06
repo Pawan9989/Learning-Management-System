@@ -41,7 +41,7 @@ const Course = () => {
     setGeminiResponse("");
     try {
       const response = await fetch(
-        "https://generativelanguage.googleapis.com/v1/models/gemini-1.5-flash:generateContent?key=YOUR_API_KEY",
+        "https://generativelanguage.googleapis.com/v1/models/gemini-1.5-flash:generateContent?key=",
         {
           method: "POST",
           headers: {
@@ -323,7 +323,34 @@ const Course = () => {
         </div>
       </div>
 
-      
+      <h4>Evaluate Yourself:</h4>
+              <p>
+                The assessments are designed to reinforce your learning and
+                provide valuable feedback on your progress throughout the
+                course.
+              </p>
+              <p>
+                Click the below <b>"Take Quizz"</b> button to take the
+                assessment
+              </p>{" "}
+            
+          {Math.ceil((played / duration) * 100) >= 98 && (
+              <button
+                className="enroll-button"
+                onClick={() => navigate(`/assessment/${course.course_id}`)}
+              >
+                {" "}
+                Quizz
+              </button>
+            )}
+            {Math.ceil((played / duration) * 100) < 98 && (
+              <button
+                className="enroll-button-deactive"
+                onClick={showModal}
+              >
+                Quizz
+              </button>
+            )}
 
       {/* Feedback Section */}
       <div style={{ marginTop: "30px" }}>

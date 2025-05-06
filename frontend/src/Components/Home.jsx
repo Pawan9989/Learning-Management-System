@@ -10,6 +10,7 @@ import c4 from "./images/python.jpg";
 import c5 from "./images/java.png";
 import c6 from "./images/css.png";
 import "./css/style.css";
+import GeminiChatbot from "./GeminiChatbot";
 import {
   faGraduationCap,
   faAward,
@@ -181,6 +182,7 @@ function Home() {
         
         <Footer />
       </div>
+      <GeminiChatbot />
     </div>
   );
 }
