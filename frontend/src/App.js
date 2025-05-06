@@ -1,5 +1,5 @@
 import './App.css';
-import {BrowserRouter , Routes , Route} from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Login from './Components/login';
 import Register from './Components/register';
 import Course from './Components/course';
@@ -23,43 +23,63 @@ import DTutors from './Components/DashBoard/DTutors';
 import certificate from './Components/certificate';
 import Forum from './Components/forum';
 import ProtectedRoute from "./Components/ProtectedRoute";
-
+import AdminRoute from "./Components/AdminRoute";
 
 function App() {
   return (
     <div className="App">
       <BrowserRouter>
         <Routes>
-          <Route path="/addquestions/:id" element={<AddQuestions/>}/>
-          <Route path='/dashboard' Component={Dashboard}></Route>
-          <Route path='/login' Component={Login}></Route>
-          <Route path='/register' Component={Register}></Route>
-          <Route path='/' Component={Home}></Route>
-          <Route path='/courses' Component={Courses}></Route>
-          <Route path='/course/:id' Component={Course}></Route>
-          <Route path='/discussion/:id' Component={Forum}></Route>
-          <Route path='/certificate/:id' Component={certificate}></Route>
-          <Route path='/assessment/:id' Component={Assessment}></Route>
-          <Route path='/addcourse' Component={AddCourse}></Route>
-          <Route path='/editCourse/:id' Component={EditCourse}></Route>
-          <Route path='/profile' Component={Profile}></Route>
-          <Route path='/Learnings' Component={Learnings}></Route>
-          <Route path='/Dcourses' Component={DCourses}></Route>
-          <Route path='/Dusers' Component={DUsers}></Route>
-          <Route path='/Dtutors' Component={DTutors}></Route>
-          <Route path='/Performance' Component={Performance} />
-          <Route path='*' Component={ErrorPage}></Route>
-          <Route
-  path="/courses"
-  element={
-    <ProtectedRoute>
-      <Courses />
-    </ProtectedRoute>
-  }
-/>
+          <Route path="/addquestions/:id" element={<AddQuestions />} />
+          <Route path='/dashboard' element={
+            <AdminRoute>
+              <Dashboard />
+            </AdminRoute>
+          } />
+          <Route path='/login' element={<Login />} />
+          <Route path='/register' element={<Register />} />
+          <Route path='/' element={<Home />} />
+          <Route path='/courses' element={<Courses />} />
+          <Route path='/course/:id' element={<Course />} />
+          <Route path='/discussion/:id' element={<Forum />} />
+          <Route path='/certificate/:id' element={<certificate />} />
+          <Route path='/assessment/:id' element={<Assessment />} />
+          <Route path='/addcourse' element={
+            <AdminRoute>
+              <AddCourse />
+            </AdminRoute>
+          } />
+          <Route path='/editCourse/:id' element={
+            <AdminRoute>
+              <EditCourse />
+            </AdminRoute>
+          } />
+          <Route path='/profile' element={<Profile />} />
+          <Route path='/Learnings' element={<Learnings />} />
+          <Route path='/Dcourses' element={
+            <AdminRoute>
+              <DCourses />
+            </AdminRoute>
+          } />
+          <Route path='/Dusers' element={
+            <AdminRoute>
+              <DUsers />
+            </AdminRoute>
+          } />
+          <Route path='/Dtutors' element={
+            <AdminRoute>
+              <DTutors />
+            </AdminRoute>
+          } />
+          <Route path='/Performance' element={
+            <AdminRoute>
+              <Performance />
+            </AdminRoute>
+          } />
+          <Route path='*' element={<ErrorPage />} />
         </Routes>
       </BrowserRouter>
-      <ToastContainer/>
+      <ToastContainer />
     </div>
   );
 }

@@ -31,6 +31,14 @@ function SideBar(props){
               <span className="text">Courses</span>
             </Link>
           </li>
+          {localStorage.getItem("isAdmin") === "true" && (
+    <li>
+      <Link to="/dashboard" className="a">
+        <i className='bx bxs-dashboard' id="i"></i>
+        <span className="text">Dashboard</span>
+      </Link>
+    </li>
+  )}
         </ul>
       </div>
     );

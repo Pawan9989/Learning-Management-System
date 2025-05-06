@@ -120,6 +120,11 @@ function Navbar(props) {
             ) : (
               <></>
             )}
+            {localStorage.getItem("isAdmin") === "true" && (
+    <li>
+      <Link to="/dashboard">Dashboard</Link>
+    </li>
+  )}
             {authToken !== null ? (
               <li>
                 <button onClick={handleLogOut} className="sign-out-button">
@@ -131,7 +136,9 @@ function Navbar(props) {
                 <button onClick={() => navigate("/login")}>Login/SignUp</button>
               </li>
             )}
+            
           </ul>
+          
         </div>
       </nav>
     </div>

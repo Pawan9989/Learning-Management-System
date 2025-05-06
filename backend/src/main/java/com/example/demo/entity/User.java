@@ -4,6 +4,17 @@ import java.util.List;
 
 @Entity
 public class User {
+
+	private boolean admin;
+
+    public boolean isAdmin() {
+        return admin;
+    }
+
+    public void setAdmin(boolean admin) {
+        this.admin = admin;
+    }
+	
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;

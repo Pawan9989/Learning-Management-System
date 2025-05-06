@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { useUserContext } from "./UserContext";
 import Navbar from "./Navbar";
 
 function Login() {
@@ -10,10 +9,9 @@ function Login() {
 
   const navigate = useNavigate();
 
-  const { setUser } = useUserContext();
-
   const login = async (e) => {
     e.preventDefault();
+    setError("");
     try {
       const response = await fetch("http://localhost:8085/api/users/login", {
         method: "POST",
@@ -26,7 +24,8 @@ function Login() {
         const data = await response.json();
         localStorage.setItem("token", data.token);
         localStorage.setItem("email", email);
-        console.log(data.token);
+
+        // Fetch user details (including admin flag)
         const userDetailsResponse = await fetch(
           `http://localhost:8085/api/users/details?email=${email}`
         );
@@ -35,15 +34,20 @@ function Login() {
           const ud = await userDetailsResponse.json();
           localStorage.setItem("name", ud["username"]);
           localStorage.setItem("id", ud["id"]);
-          console.log("Hello");
-          setUser({ name: ud["name"], email: email, id: ud["id"] });
-          navigate("/courses");
+          localStorage.setItem("isAdmin", ud["admin"]); // Store admin flag
+
+          // Redirect based on admin status
+          if (ud["admin"]) {
+            navigate("/dashboard");
+          } else {
+            navigate("/courses");
+          }
         } else {
           setError("An error occurred while fetching user details.");
         }
       } else {
         const data = await response.json();
-        setError(data.error);
+        setError(data.error || "Invalid Credentials.");
       }
     } catch (error) {
       setError("Invalid Credentials.");
@@ -56,7 +60,7 @@ function Login() {
       <div className="auth">
         <div className="container">
           <h3>Welcome!</h3>
-          <br></br>
+          <br />
           <h2>Login</h2>
           <br />
           <form autoComplete="off" className="form-group" onSubmit={login}>
@@ -67,6 +71,7 @@ function Login() {
               style={{ width: "100%", marginRight: "50px" }}
               onChange={(e) => setEmail(e.target.value)}
               value={email}
+              required
             />
             <br />
             <label htmlFor="password">Password : </label>
@@ -76,6 +81,7 @@ function Login() {
               style={{ width: "100%" }}
               onChange={(e) => setPassword(e.target.value)}
               value={password}
+              required
             />
             <br />
             <div className="btn1">
@@ -95,4 +101,5 @@ function Login() {
     </div>
   );
 }
+
 export default Login;
