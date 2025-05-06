@@ -15,7 +15,7 @@ const Course = () => {
   const [course, setCourse] = useState({
     course_name: "",
     instructor: "",
-    price: null,
+    //price: null,
     description: "",
     y_link: "",
     p_link: "",

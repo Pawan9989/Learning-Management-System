@@ -55,8 +55,8 @@ function Home() {
           <div className="fea-base">
             <div className="fea-box">
               <FontAwesomeIcon icon={faGraduationCap} className="i" />
-              <h3>Scholarship Facility</h3>
-              <p>Originality is the essence of true scholarship. </p>
+              <h3>Upskilling</h3>
+              <p>Education is not preparation for life; education is life itself. </p>
             </div>
             <div className="fea-box">
               <FontAwesomeIcon icon={faStar} className="i" />
