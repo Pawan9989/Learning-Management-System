@@ -41,7 +41,7 @@ const Course = () => {
     setGeminiResponse("");
     try {
       const response = await fetch(
-        "https://generativelanguage.googleapis.com/v1/models/gemini-1.5-flash:generateContent?key=",
+        "https://generativelanguage.googleapis.com/v1/models/gemini-1.5-flash:generateContent?key=AIzaSyDmTCOqGMk6lXa_RHcVN2OYOdrRNsRv3ag",
         {
           method: "POST",
           headers: {
@@ -355,7 +355,9 @@ const Course = () => {
       {/* Feedback Section */}
       <div style={{ marginTop: "30px" }}>
         <h4>Feedback</h4>
-        <Feedback courseId={courseId} />
+        
+        
+<Feedback courseid={courseId} />
       </div>
     </div>
   );

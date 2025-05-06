@@ -56,7 +56,7 @@ function Home() {
             <div className="fea-box">
               <FontAwesomeIcon icon={faGraduationCap} className="i" />
               <h3>Upskilling</h3>
-              <p>Education is not preparation for life; education is life itself. </p>
+              <p>Education is not preparation for life, education is life itself. </p>
             </div>
             <div className="fea-box">
               <FontAwesomeIcon icon={faStar} className="i" />
