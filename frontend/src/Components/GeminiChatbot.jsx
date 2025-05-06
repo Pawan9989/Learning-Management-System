@@ -3,9 +3,7 @@ import { FaTimes } from "react-icons/fa";
 // Use online Gemini Bard logo
 const geminiLogo = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNgxyIQLENmHj0d9kisFxyiFP4Dan0d3Oaxg&s";
 
-const GEMINI_API_KEY = "";
-
-// ...rest of your code remains unchanged...
+const GEMINI_API_KEY = "AIzaSyDmTCOqGMk6lXa_RHcVN2OYOdrRNsRv3ag"; // Add your Gemini API key here
 
 const GeminiChatbot = () => {
   const [open, setOpen] = useState(false);
@@ -160,12 +158,19 @@ const GeminiChatbot = () => {
                           ? "linear-gradient(135deg,#2563eb,#7c3aed)"
                           : "#e5e7eb",
                       color: msg.from === "user" ? "#fff" : "#222",
-                      borderRadius: 14,
+                      borderRadius:
+                        msg.from === "user"
+                          ? "16px 16px 4px 16px"
+                          : "16px 16px 16px 4px",
                       padding: "8px 14px",
                       maxWidth: "80%",
                       wordBreak: "break-word",
+                      textAlign: "left",
                     }}
                   >
+                    {msg.from === "bot" && (
+                      <span style={{ fontWeight: 700, marginRight: 6 }}>Gemini: </span>
+                    )}
                     {msg.text}
                   </div>
                 </div>
