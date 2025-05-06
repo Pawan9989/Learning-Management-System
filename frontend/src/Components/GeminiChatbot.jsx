@@ -4,13 +4,13 @@ import ReactMarkdown from "react-markdown";
 // Use online Gemini Bard logo
 const geminiLogo = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNgxyIQLENmHj0d9kisFxyiFP4Dan0d3Oaxg&s";
 
-const GEMINI_API_KEY = "";
+const GEMINI_API_KEY = "AIzaSyDmTCOqGMk6lXa_RHcVN2OYOdrRNsRv3ag";
 
 const GeminiChatbot = () => {
   const [open, setOpen] = useState(false);
   const [prompt, setPrompt] = useState("");
   const [messages, setMessages] = useState([
-    { from: "bot", text: "Hi! I'm Gemini. How can I help you today?" },
+    { from: "bot", text: "Hi! I'm Dia. How can I help you today?" },
   ]);
   const [loading, setLoading] = useState(false);
   const chatEndRef = useRef(null);
@@ -67,7 +67,7 @@ const GeminiChatbot = () => {
       >
         {!open && (
           <button
-            aria-label="Open Gemini Chatbot"
+            aria-label="Open Dia Chatbot"
             onClick={() => setOpen(true)}
             style={{
               background: "#fff",
@@ -118,14 +118,14 @@ const GeminiChatbot = () => {
                 justifyContent: "space-between",
               }}
             >
-              <span style={{ fontWeight: 700, fontSize: 18, display: "flex", alignItems: "center" }}>
-                <img
-                  src={geminiLogo}
-                  alt="Gemini"
-                  style={{ width: 28, height: 28, borderRadius: "50%", marginRight: 8, background: "#fff" }}
-                />
-                Gemini Chatbot
-              </span>
+              <span style={{ fontWeight: 700, fontSize: 30, display: "flex", alignItems: "center" }}>
+  <img
+    src={geminiLogo}
+    alt="Dia"
+    style={{ width: 28, height: 28, borderRadius: "50%", marginRight: 8, background: "#fff"}}
+  />
+  <span style={{ color: "#FFD600" }}>Dia</span>
+</span>
               <FaTimes
                 style={{ cursor: "pointer" }}
                 onClick={() => setOpen(false)}
@@ -170,7 +170,7 @@ const GeminiChatbot = () => {
                     }}
                   >
                     {msg.from === "bot" && (
-                      <span style={{ fontWeight: 700, marginRight: 6 }}>Gemini: </span>
+                      <span style={{ fontWeight: 700, marginRight: 6 }}></span>
                     )}
                     {msg.from === "bot" ? (
                       <ReactMarkdown>{msg.text}</ReactMarkdown>
@@ -196,7 +196,7 @@ const GeminiChatbot = () => {
                 type="text"
                 value={prompt}
                 onChange={(e) => setPrompt(e.target.value)}
-                placeholder="Ask Gemini anything..."
+                placeholder="Ask Dia anything..."
                 style={{
                   flex: 1,
                   border: "none",
