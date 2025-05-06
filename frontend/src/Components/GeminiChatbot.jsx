@@ -4,7 +4,7 @@ import ReactMarkdown from "react-markdown";
 // Use online Gemini Bard logo
 const geminiLogo = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNgxyIQLENmHj0d9kisFxyiFP4Dan0d3Oaxg&s";
 
-const GEMINI_API_KEY = "AIzaSyDmTCOqGMk6lXa_RHcVN2OYOdrRNsRv3ag";
+const GEMINI_API_KEY = "";
 
 const GeminiChatbot = () => {
   const [open, setOpen] = useState(false);
