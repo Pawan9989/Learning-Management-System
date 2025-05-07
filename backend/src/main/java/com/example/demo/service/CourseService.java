@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 import com.example.demo.entity.Course;
 import com.example.demo.repository.CourseRepository;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -44,4 +45,20 @@ public Course updateCourse(Long id, Course updatedCourse) {
 public void deleteCourse(Long id) {
     courseRepository.deleteById(id);
 }
+public List<Course> recommendCourses(String interests) {
+        List<Course> allCourses = courseRepository.findAll();
+        List<Course> recommendations = new ArrayList<>();
+        String[] keywords = interests.toLowerCase().split("[, ]+");
+        for (Course course : allCourses) {
+            String name = course.getCourseName().toLowerCase();
+            String desc = course.getDescription() != null ? course.getDescription().toLowerCase() : "";
+            for (String keyword : keywords) {
+                if (name.contains(keyword) || desc.contains(keyword)) {
+                    recommendations.add(course);
+                    break;
+                }
+            }
+        }
+        return recommendations;
+    }
 }

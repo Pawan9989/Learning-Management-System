@@ -15,6 +15,8 @@
     "boxicons": "^2.1.4",
     "html2canvas": "^1.4.1",
     "jspdf": "^2.5.1",
+    "marked": "^15.0.11",
+    "mermaid": "^11.6.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-dom-confetti": "^0.2.0",

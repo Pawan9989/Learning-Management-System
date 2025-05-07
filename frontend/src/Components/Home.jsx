@@ -92,7 +92,7 @@ function Home() {
                   {[...Array(5)].map((_, index) => (
                     <FontAwesomeIcon key={index} icon={faStar} className="i" />
                   ))}
-                  <p>(239)</p>
+                  {/* <p>(239)</p> */}
                 </div>
               </div>
               {/* <div className="cost">₹999</div> */}
@@ -108,7 +108,7 @@ function Home() {
                   {[...Array(5)].map((_, index) => (
                     <FontAwesomeIcon key={index} icon={faStar} className="i" />
                   ))}
-                  <p>(178)</p>
+                  {/* <p>(178)</p> */}
                 </div>
               </div>
               {/* <div className="cost">₹799</div> */}
@@ -124,7 +124,7 @@ function Home() {
                   {[...Array(5)].map((_, index) => (
                     <FontAwesomeIcon key={index} icon={faStar} className="i" />
                   ))}
-                  <p>(258)</p>
+                  {/* <p>(258)</p> */}
                 </div>
               </div>
               {/* <div className="cost">₹499</div> */}
@@ -140,7 +140,7 @@ function Home() {
                   {[...Array(5)].map((_, index) => (
                     <FontAwesomeIcon key={index} icon={faStar} className="i" />
                   ))}
-                  <p>(550)</p>
+                  {/* <p>(550)</p> */}
                 </div>
               </div>
               {/* <div className="cost">₹1499</div> */}
@@ -156,7 +156,7 @@ function Home() {
                   {[...Array(5)].map((_, index) => (
                     <FontAwesomeIcon key={index} icon={faStar} className="i" />
                   ))}
-                  <p>(783)</p>
+                  {/* <p>(783)</p> */}
                 </div>
               </div>
               {/* <div className="cost">₹1999</div> */}
@@ -172,7 +172,7 @@ function Home() {
                   {[...Array(5)].map((_, index) => (
                     <FontAwesomeIcon key={index} icon={faStar} className="i" />
                   ))}
-                  <p>(439)</p>
+                  {/* <p>(439)</p> */}
                 </div>
               </div>
               {/* <div className="cost">₹499</div> */}

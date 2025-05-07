@@ -51,6 +51,10 @@ public class CourseController {
     public void deleteCourse(@PathVariable Long id) {
         courseService.deleteCourse(id);
     }
+    @GetMapping("/recommend")
+    public List<Course> recommendCourses(@RequestParam String interests) {
+        return courseService.recommendCourses(interests);
+    }
 }
 
 

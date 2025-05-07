@@ -38,9 +38,9 @@ function Login() {
 
           // Redirect based on admin status
           if (ud["admin"]) {
-            navigate("/dashboard");
+            navigate("/dashboard"); // Admin dashboard
           } else {
-            navigate("/courses");
+            navigate("/my-dashboard"); // Learner dashboard
           }
         } else {
           setError("An error occurred while fetching user details.");

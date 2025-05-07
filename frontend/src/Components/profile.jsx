@@ -6,15 +6,14 @@ import Performance from "./DashBoard/Performance";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import "./profile.css";
+import UserProfile from "./UserProfile";
 
 function Profile() {
   const navigate = useNavigate();
   const authToken = localStorage.getItem("token");
-   const id = localStorage.getItem("id");
+  const id = localStorage.getItem("id");
   const [userDetails, setUserDetails] = useState(null);
   const [profileImage, setProfileImage] = useState(localStorage.getItem("profileImage") || "");
-
-
 
   useEffect(() => {
     if (!authToken) {
@@ -30,7 +29,6 @@ function Profile() {
           throw new Error("Failed to fetch user details.");
         }
         const data = await response.json();
-        console.log(data);
         setUserDetails(data);
       } catch (error) {
         console.error("Error fetching data:", error);
@@ -38,7 +36,7 @@ function Profile() {
     }
 
     fetchUserDetails();
-  }, [authToken, navigate,id]);
+  }, [authToken, navigate, id]);
 
   const handleImageChange = (event) => {
     const file = event.target.files[0];
@@ -55,7 +53,6 @@ function Profile() {
     }
   };
 
-
   return (
     <div>
       <Navbar page={"profile"} />
@@ -71,20 +68,32 @@ function Profile() {
           <p className="profile-phno">{userDetails?.phno}</p>
         </div>
         <div>
-        <h4>Gender: </h4>
-        <p className="profile-gender">{userDetails?.gender}</p>
-      </div>
-      <div>
-        <h4>Date of Birth: </h4>
-        <p className="profile-dob">{userDetails?.dob}</p>
-      </div>
-      <div>
-        <h4>Profession: </h4>
-        <p className="profile-gender">{userDetails?.profession}</p>
-      </div>
+          <h4>Gender: </h4>
+          <p className="profile-gender">{userDetails?.gender}</p>
+        </div>
+        <div>
+          <h4>Date of Birth: </h4>
+          <p className="profile-dob">{userDetails?.dob}</p>
+        </div>
+        <div>
+          <h4>Profession: </h4>
+          <p className="profile-gender">{userDetails?.profession}</p>
+        </div>
         <div>
           <h4>Learning courses: </h4>
           <p className="profile-phno">{userDetails?.learningCourses.length}</p>
+        </div>
+        {/* UserProfile component for editing bio/interests */}
+        <div style={{ marginTop: 24 }}>
+          {userDetails && (
+            <UserProfile
+              user={{
+                name: userDetails.username,
+                bio: userDetails.bio || "",
+                interests: userDetails.interests || ""
+              }}
+            />
+          )}
         </div>
         <div
           style={{

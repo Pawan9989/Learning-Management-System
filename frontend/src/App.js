@@ -24,7 +24,10 @@ import certificate from './Components/certificate';
 import Forum from './Components/forum';
 import ProtectedRoute from "./Components/ProtectedRoute";
 import AdminRoute from "./Components/AdminRoute";
-
+import PersonalDashboard from "./Components/PersonalDashboard";
+import SetGoal from "./Components/SetGoal";
+import CareerPaths from "./Components/CareerPaths";
+import CareerPathDetails from "./Components/CareerPathDetails";
 function App() {
   return (
     <div className="App">
@@ -77,7 +80,18 @@ function App() {
             </AdminRoute>
           } />
           <Route path='*' element={<ErrorPage />} />
+          <Route path="/dashboard" element={<PersonalDashboard />} />
+        <Route path="/set-goal" element={<SetGoal />} />
+        <Route path='/dashboard' element={
+  <AdminRoute>
+    <Dashboard />
+  </AdminRoute>
+} />
+<Route path="/my-dashboard" element={<PersonalDashboard />} />
+<Route path="/career-paths" element={<CareerPaths />} />
+          <Route path="/career-paths/:path" element={<CareerPathDetails />} />
         </Routes>
+        
       </BrowserRouter>
       <ToastContainer />
     </div>
