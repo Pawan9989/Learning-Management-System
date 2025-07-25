@@ -10,6 +10,7 @@ import c4 from "./images/python.jpg";
 import c5 from "./images/java.png";
 import c6 from "./images/css.png";
 import "./css/style.css";
+import GeminiChatbot from "./GeminiChatbot";
 import {
   faGraduationCap,
   faAward,
@@ -54,8 +55,8 @@ function Home() {
           <div className="fea-base">
             <div className="fea-box">
               <FontAwesomeIcon icon={faGraduationCap} className="i" />
-              <h3>Scholarship Facility</h3>
-              <p>Originality is the essence of true scholarship. </p>
+              <h3>Upskilling</h3>
+              <p>Education is not preparation for life, education is life itself. </p>
             </div>
             <div className="fea-box">
               <FontAwesomeIcon icon={faStar} className="i" />
@@ -77,7 +78,7 @@ function Home() {
         </section>
         <section id="course">
           <h1>Our Popular Courses</h1>
-          <p>10,000+ enrolled</p>
+          {/* <p>10,000+ enrolled</p> */}
           <div className="course-box">
             {/* ... (Course content here) */}
             <div className="courses">
@@ -91,10 +92,10 @@ function Home() {
                   {[...Array(5)].map((_, index) => (
                     <FontAwesomeIcon key={index} icon={faStar} className="i" />
                   ))}
-                  <p>(239)</p>
+                  {/* <p>(239)</p> */}
                 </div>
               </div>
-              <div className="cost">₹999</div>
+              {/* <div className="cost">₹999</div> */}
             </div>
             <div className="courses">
               <img src={c2} alt="" />
@@ -107,10 +108,10 @@ function Home() {
                   {[...Array(5)].map((_, index) => (
                     <FontAwesomeIcon key={index} icon={faStar} className="i" />
                   ))}
-                  <p>(178)</p>
+                  {/* <p>(178)</p> */}
                 </div>
               </div>
-              <div className="cost">₹799</div>
+              {/* <div className="cost">₹799</div> */}
             </div>
             <div className="courses">
               <img src={c3} alt="" />
@@ -123,10 +124,10 @@ function Home() {
                   {[...Array(5)].map((_, index) => (
                     <FontAwesomeIcon key={index} icon={faStar} className="i" />
                   ))}
-                  <p>(258)</p>
+                  {/* <p>(258)</p> */}
                 </div>
               </div>
-              <div className="cost">₹499</div>
+              {/* <div className="cost">₹499</div> */}
             </div>
             <div className="courses">
               <img src={c4} alt="" />
@@ -139,10 +140,10 @@ function Home() {
                   {[...Array(5)].map((_, index) => (
                     <FontAwesomeIcon key={index} icon={faStar} className="i" />
                   ))}
-                  <p>(550)</p>
+                  {/* <p>(550)</p> */}
                 </div>
               </div>
-              <div className="cost">₹1499</div>
+              {/* <div className="cost">₹1499</div> */}
             </div>
             <div className="courses">
               <img src={c5} alt="" />
@@ -155,10 +156,10 @@ function Home() {
                   {[...Array(5)].map((_, index) => (
                     <FontAwesomeIcon key={index} icon={faStar} className="i" />
                   ))}
-                  <p>(783)</p>
+                  {/* <p>(783)</p> */}
                 </div>
               </div>
-              <div className="cost">₹1999</div>
+              {/* <div className="cost">₹1999</div> */}
             </div>
             <div className="courses">
               <img src={c6} alt="" />
@@ -171,55 +172,17 @@ function Home() {
                   {[...Array(5)].map((_, index) => (
                     <FontAwesomeIcon key={index} icon={faStar} className="i" />
                   ))}
-                  <p>(439)</p>
+                  {/* <p>(439)</p> */}
                 </div>
               </div>
-              <div className="cost">₹499</div>
+              {/* <div className="cost">₹499</div> */}
             </div>
           </div>
         </section>
-        <section id="registration">
-          <div className="reminder">
-            <p>Get 100 Online Courses for Free</p>
-            <h1>Register to get it</h1>
-            <div className="time">
-              <div className="date">
-                18
-                <br /> Days
-              </div>
-              <div className="date">
-                23
-                <br /> Hours
-              </div>
-              <div className="date">
-                06
-                <br /> Minutes
-              </div>
-              <div className="date">
-                58
-                <br /> Seconds
-              </div>
-            </div>
-          </div>
-          {!authToken ? (
-            <div className="form">
-              <h3>Create Free Account NOW!</h3>
-              <input type="text" placeholder="Name" name="" id="" />
-              <input type="text" placeholder="Email" name="" id="" />
-              <input type="password" placeholder="Password" name="" id="" />
-              <input type="number" placeholder="Phone Number" name="" id="" />
-              <div className="btn">
-                <a className="yellow" href="#">
-                  Submit Form
-                </a>
-              </div>
-            </div>
-          ) : (
-            <></>
-          )}
-        </section>
+        
         <Footer />
       </div>
+      <GeminiChatbot />
     </div>
   );
 }

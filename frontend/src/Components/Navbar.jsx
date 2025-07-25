@@ -17,6 +17,7 @@ function Navbar(props) {
     localStorage.removeItem("name");
     localStorage.removeItem("id");
     localStorage.removeItem("profileImage");
+    localStorage.removeItem("isAdmin");
     navigate("/");
   };
 
@@ -95,9 +96,7 @@ function Navbar(props) {
                   </Link>
                 </li>
               )
-            ) : (
-              <></>
-            )}
+            ) : null}
             {authToken ? (
               value === "learnings" ? (
                 <li style={{ backgroundColor: "purple", borderRadius: "5px" }}>
@@ -117,9 +116,46 @@ function Navbar(props) {
                   </Link>
                 </li>
               )
-            ) : (
-              <></>
+            ) : null}
+            {/* My Dashboard for learners, styled like others */}
+            {authToken && localStorage.getItem("isAdmin") !== "true" && (
+              value === "dashboard" ? (
+                <li style={{ backgroundColor: "purple", borderRadius: "5px" }}>
+                  <Link
+                    to="/my-dashboard"
+                    style={{ color: "white", padding: "10px" }}
+                  >
+                    My Dashboard
+                  </Link>
+                </li>
+              ) : (
+                <li>
+                  <Link to="/my-dashboard">My Dashboard</Link>
+                </li>
+              )
             )}
+            {/* Admin Dashboard for admins, styled like others */}
+            {authToken && localStorage.getItem("isAdmin") === "true" && (
+              value === "dashboard" ? (
+                <li style={{ backgroundColor: "purple", borderRadius: "5px" }}>
+                  <Link
+                    to="/dashboard"
+                    style={{ color: "white", padding: "10px" }}
+                  >
+                    Dashboard
+                  </Link>
+                </li>
+              ) : (
+                <li>
+                  <Link to="/dashboard">Dashboard</Link>
+                </li>
+              )
+            )}
+            <li>
+              <Link to="/career-paths">
+                Career Path 
+              </Link>
+            </li>
             {authToken !== null ? (
               <li>
                 <button onClick={handleLogOut} className="sign-out-button">
@@ -131,6 +167,7 @@ function Navbar(props) {
                 <button onClick={() => navigate("/login")}>Login/SignUp</button>
               </li>
             )}
+            
           </ul>
         </div>
       </nav>
